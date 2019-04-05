@@ -1,2 +1,3 @@
 What are Intelligence Agents?
 -----------------------------
+In a article in the "Modeling and Simulation: the Computer Science of Illusion" journal. Jacques Ferber defines a agent as, "An agent can be a physical or virtual entity that can act, perceiveits environment (in a partial way) and communicate with others,is autonomous and has skills to achieve its goals and tendencies.It is in a multi-agent system (MAS) that contains anenvironment, objects and agents (the agents being the only onesto act), relations between all the entities, a set of operations thatcan be performed by the entities and the changes of the universein time and due to these actions."
