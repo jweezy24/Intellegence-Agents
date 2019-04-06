@@ -4,4 +4,3 @@ In a article in the "Modeling and Simulation: the Computer Science of Illusion" 
 
 Designing an Agent:
 -------------------
-      
