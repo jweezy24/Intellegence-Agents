@@ -4,7 +4,7 @@
 
 # Environments for Agents:
 
-Agents are measured by their performance in the environment they were built for. Thus, there are a multitude of criteria a environment can be judged on. Although, environments have five different principals that are used to define them.
+Agents are measured by their performance in the environment they were built for. Thus, there are a multitude of criteria a environment can be judged on. Agents are evaluated by how well they are able to manage the several pieces of their their environment. There are five criteria that every agent follows within an environment. We will start with accessibility.
 
 ### Accessibility
-How accessible a agent is depends on its sensory apparatus.  
+How accessible a agent is depends on its sensory apparatus. So accessibility is graded on how well the agent's sensors evaluate the environment. An agent that is built for all aspects of it's environment will have a high accessibility. You can look at accessibility as how well the agent interprets the environment. A human example of evaluating accessibility lies within Northwestern running-backs. Northwestern recruiters are known for picking a running-back that thinks before they run. Meaning, Northwestern running-backs are know for path finding. The way the runner evaluates their path is based on how well they deal with the data they are given. The recruiters look for how well the runner observes the field. Thus, a vital piece to a Northwestern running back is based on how well the runner deals with their sensory feedback. Thus, Northwestern recruiters look for a runner with high accessibility. The best players that are accessible judge their environment quickly. Agents are judged on accessibility in the same sense. An agent's accessibility also depends on speed. The highest accessibility for agents are rooted in their coverage and speed of managing their sensors.
