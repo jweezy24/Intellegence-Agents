@@ -1,6 +1,6 @@
-# What are Intelligence Agents?
+# What are Agents?
 
- Jacques Ferber defines an agent as, " a physical or virtual entity that can act, perceive its environment (in a partial way) and communicate with others,is autonomous and has skills to achieve its goals and tendencies." In other words, an agent is usually given a set of tasks that it should solve. Those tasks are given in an environment that changes. The agent in question should adapt to those new changes. The agent's result should change when the environment changes. One agent is just a agent on a system. Where as if the system contains more than one agent the system is referred to as a "Multi-agent system"(MAS). An example I can give would be AI helpers such as Alexa and Siri. They are idle workers when no requests are given. When they receive a request, they use natural language processing and internet data to give feedback. Self driving cars are another example of intelligence agents as they use GPS software to pick routes. They also can adapt to traffic as the traffic happens. This section we will be discussing the different levels of intelligence that agents have. We will also make a small single agent system in python.
+ Jacques Ferber defines an agent as, " a physical or virtual entity that can act, perceive its environment (in a partial way) and communicate with others,is autonomous and has skills to achieve its goals and tendencies." In other words, an agent is usually given a set of tasks that it should solve. Those tasks are given in an environment that changes. The agent in question should adapt to those new changes. The agent's result should change when the environment changes. One agent is just a agent on a system. Where as if the system contains more than one agent the system is referred to as a "Multi-agent system"(MAS).
 
 # Environments for Agents:
 
@@ -22,6 +22,13 @@ A environment could be either static or dynamic. A static environment will not c
 How discrete an environment is how many events are possible within the environment. The opposite of discrete environment is a continuous environment. It sounds similar to to determinism but determinism discusses the complexity of the situation rather than the events that the situation embodies. For example, video games are deterministic and discrete. Although, when the players are pinned against each other the game can become continuous. One type of game that is very continuous in nature are fighting games. Their environments are very deterministic. As in, the rules within a fighting game's environment are simple and will not change. Actually playing the game against a person is a different story. A human player can do something completely out of left field that even with years of experience and practice one may still be caught off guard. Where as a game like chess is very discrete. The set of possible scenarios is finite. Making chess more discrete.
 
 # Designing for Environments
-![Figure 1.1](/images/basicDesign.png)
 
-Environments can range from being as simple as reacting to a packet or can be as complex as reacting to the stock market. Agents are made to deal with specific environments. Intelligence agents adapt to their environment. Most agents will be designed like the diagram above. 
+## Simple Environments
+![Figure 1](/images/basicDesign.png)
+
+Environments can range from being as simple as reacting to a packet or can be as complex as reacting to the stock market. Agents are made to deal with specific environments. Most agents will be designed like the diagram above. The figure above is suited for a environment that is very discrete, static, deterministic, episodic, and accessible. You can see how linear the process is for a simple agent. In the most simple situation the system would only need a single agent waiting in a thread.
+
+## Complex Environments
+![Figure 2](/images/complexDesign.png)
+
+The image above describes a agent that adapts to it's environment as it is read in. As you can see there is a lot more going on. For one, the simple diagram doesn't have to be multi-threaded. Where as, the complex diagram has to be multi-threaded if the user wishes to have fast and accurate results. Also, what is commonly done with a complex environment is multiple agents will be needed thus the system will become a MAS. So complex environments need more from agents. Thus, to deal with a dynamic, continuous, non-deterministic environment. We need to observe what is commonly referred to as an intelligence agent.
