@@ -32,3 +32,6 @@ Environments can range from being as simple as reacting to a packet or can be as
 ![Figure 2](/images/complexDesign.png)
 
 The image above describes a agent that adapts to it's environment as it is read in. As you can see there is a lot more going on. For one, the simple diagram doesn't have to be multi-threaded. Where as, the complex diagram has to be multi-threaded if the user wishes to have fast and accurate results. Also, what is commonly done with a complex environment is multiple agents will be needed thus the system will become a MAS. So complex environments need more from agents. Thus, to deal with a dynamic, continuous, non-deterministic environment. We need to observe what is commonly referred to as an intelligence agent.
+
+# Intelligence Agents
+Intelligence agents (also called rational agents), are agents that should be able to process any sequence of events with the highest speed and efficiency. The key part of a intelligence agent is the artificial intelligence aspects of dealing with a situation. How the agent adapts to a complex dynamic environment is what makes the agent in question intelligent.
