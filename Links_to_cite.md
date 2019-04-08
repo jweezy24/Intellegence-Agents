@@ -4,3 +4,6 @@ https://numerov.com/dspace/es/docdazim.pdf
 https://www.sciencedirect.com/science/article/pii/S0164121207000787?via%3Dihub
 https://searchenterpriseai.techtarget.com/definition/agent-intelligent-agent
 https://www.cin.ufpe.br/~tfl2/artificial-intelligence-modern-approach.9780131038059.25368.pdf
+
+Pictures:
+https://en.wikipedia.org/wiki/Intelligent_agent#/media/File:IntelligentAgent-SimpleReflex.png
