@@ -48,11 +48,12 @@ To really understand why intelligence agents are distributed, we should make a s
 import socket
 class agent:
   def __init__(port):
-    self.listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    self.sender = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    self.sender.bind('',port)
-
-    def listen():
-      self.listener.recvfrom(1024)
+    #setup agent
 ```   
-As you can see from the example above, the agent class is going to be used in a distributed manner. 
+As you can see from the example above, the agent class is going to be used in a distributed manner. A agent will be alive waiting for a job that will be given by the environment. We will make the environment next.
+```python
+class Environment:
+  def __init__():
+    #setup environment
+    pass
+```
