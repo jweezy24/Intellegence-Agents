@@ -29,9 +29,18 @@ How discrete an environment is how many events are possible within the environme
 Environments can range from being as simple as reacting to a packet or can be as complex as reacting to the stock market. Agents are made to deal with specific environments. Most agents will be designed like the diagram above. The figure above is suited for a environment that is very discrete, static, deterministic, episodic, and accessible. You can see how linear the process is for a simple agent. In the most simple situation the system would only need a single agent waiting in a thread.
 
 ## Complex Environments
-![Figure 2](/images/complexDesign.png)
+[Figure 2]: /images/complexDesign.png
+![logo][Figure 2]
+
 
 The image above describes a agent that adapts to it's environment as it is read in. As you can see there is a lot more going on. For one, the simple diagram doesn't have to be multi-threaded. Where as, the complex diagram has to be multi-threaded if the user wishes to have fast and accurate results. Also, what is commonly done with a complex environment is multiple agents will be needed thus the system will become a MAS. So complex environments need more from agents. Thus, to deal with a dynamic, continuous, non-deterministic environment. We need to observe what is commonly referred to as an intelligence agent.
 
 # Intelligence Agents
 Intelligence agents (also called rational agents), are agents that should be able to process any sequence of events with the highest speed and efficiency. The key part of a intelligence agent is the artificial intelligence aspects of dealing with a situation. How the agent adapts to a complex dynamic environment is what makes the agent in question intelligent.
+
+There are two parts of the definition of a intelligence agents that we have to define separately. The first is the speed portion. Agents are able to get this performance by being an ideal agent. Ideal agents are agents that map new input to old output based on prior results. This is similar to a cache but with more logic. Ideal agents can also be intelligent as well. For example, if the mapping the agent is doing requires logical context then the agent is also intelligent. By logical context, I am referring to infinite sets of events. Obviously if the amount of possibilities are infinite one can not run code on that set. Infinite sets need to be approached logically if one could pull any data out of it. We call agents that are both intelligent and map values to a table are intelligent ideal agents(IIA). We care about ideal agents because they are there for performance boosts.
+
+We've mentioned a few times about the agents being able to think on their own. Now we are going to define what that means. To be able to think on their own. The system of agents has to be autonomous. If we look back at [Figure 2], the autonomous part of the system I described is the adapt entity. That would serve as doing things autonomously.
+
+# Structure of Intelligence agents
+To look at the structure we have to look the behaviors.  
