@@ -42,5 +42,17 @@ There are two parts of the definition of a intelligence agents that we have to d
 
 We've mentioned a few times about the agents being able to think on their own. Now we are going to define what that means. To be able to think on their own. The system of agents has to be autonomous. If we look back at [Figure 2], the autonomous part of the system I described is the adapt entity. That would serve as doing things autonomously.
 
-# Structure of Intelligence agents
-To look at the structure we have to look the behaviors.  
+# How are Intelligence Agents Distributed?
+To really understand why intelligence agents are distributed, we should make a small example. A common situation for a simple intelligent agent to exist. A simple agent should take data and give results back based on the environment they were built for. We will be using python to develop a agent. When we give that agent a string of numbers, it should be able to make a linear equation based on the set of numbers. Although simple, this example we will be focusing on what makes the code distributed.
+```python
+import socket
+class agent:
+  def __init__(port):
+    self.listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    self.sender = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    self.sender.bind('',port)
+
+    def listen():
+      self.listener.recvfrom(1024)
+```   
+As you can see from the example above, the agent class is going to be used in a distributed manner. 
