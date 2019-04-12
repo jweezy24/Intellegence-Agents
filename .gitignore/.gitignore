@@ -1,6 +1,5 @@
 # Prerequisites
 *.d
-*.rst
 
 # Object files
 *.o
@@ -42,6 +41,7 @@
 *.su
 *.idb
 *.pdb
+*.rst
 
 # Kernel Module Compile Results
 *.mod*
