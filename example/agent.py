@@ -11,7 +11,8 @@ class agent:
         #gives socket a port and an ip address to bind to
         #we assign a port so that the environment knows where
         #to send the packet
-        self.listener.bind('', port)
+        self.listener.bind(('', port))
+        self.plot = plt
 
     #method to listen for packets
     def listen(self):
@@ -27,9 +28,11 @@ class agent:
         #the information
         points = json.loads(message)['points']
         #we are now plotting the line on a grid
-        plt.plot(points[0], points[1], 'ro')
-        #show the graph for user
-        plt.show()
         #sends a success message to the environment
+        self.plot.plot([points[0],points[2]], [points[1],points[3]], 'ro-')
         #this will tell the environment know we are ready for the next line to make
-        self.sender.sendto("success", address)
+        self.sender.sendto("success".encode(), address)
+
+    #displays the grap
+    def show(self):
+        self.plot.show()
