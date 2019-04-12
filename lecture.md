@@ -46,15 +46,79 @@ We've mentioned a few times about the agents being able to think on their own. N
 To really understand why intelligence agents are distributed, we should make a small example. A common situation for a simple intelligent agent to exist. A simple agent should take data and give results back based on the environment they were built for. We will be using python to develop a agent. When we give that agent a string of numbers, it should be able to make a linear equation based on the set of numbers. Although simple, this example we will be focusing on what makes the code distributed.
 ```python
 import socket
+import matplotlib.pyplot as plt
+import json
+
 class agent:
-  def __init__(port):
-    #setup agent
+    def __init__(self,port):
+        #initializes udp listener socket
+        self.listener = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #initializes udp sender
+        self.sender = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #gives socket a port and an ip address to bind to
+        #we assign a port so that the environment knows where
+        #to send the packet
+        self.listener.bind(('', port))
+        self.plot = plt
+
+    #method to listen for packets
+    def listen(self):
+        #listens for packet
+        message, address = self.listener.recvfrom(1024)
+        #after receiving packet translates it
+        self.translate(message,address)
+
+    #translates the packet to be put on a graph
+    def translate(self,message,address):
+        #we are sending json packets.
+        #to grab the data in the packets we use the python json library to read
+        #the information
+        points = json.loads(message)['points']
+        #we are now plotting the line on a grid
+        #sends a success message to the environment
+        self.plot.plot([points[0],points[2]], [points[1],points[3]], 'ro-')
+        #this will tell the environment know we are ready for the next line to make
+        self.sender.sendto("success".encode(), address)
+
+    #displays the grap
+    def show(self):
+        self.plot.show()
 ```   
 As you can see from the example above, the agent class is going to be used in a distributed manner. A agent will be alive waiting for a job that will be given by the environment. We will make the environment next.
 ```python
-class Environment:
-  def __init__():
-    #setup environment
-    pass
+import socket
+import random
+import json
+
+class environment:
+    #initalizes communication
+    def __init__(self,ports):
+        #initalizes udp listener socket
+        self.listener = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #initalizes udp sender
+        self.sender = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #making the socket a broadcast socket so that we don't need to know the ip of agent
+        self.sender.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        self.sender.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+        #gives socket a port and an ip address to bind to
+        self.listener.bind(('', 0))
+        self.ports = ports
+
+    def make_numbers(self):
+        num1 = random.randint(0,10)
+        num2 = random.randint(0,10)
+        num3 = random.randint(0,10)
+        num4 = random.randint(0,10)
+        #creating json dictionary to be sent later
+        json_dict = {"points":[num1,num2,num3,num4]}
+        json_message = json.dumps(json_dict)
+        #if there is only one port just send it there
+        if type(self.ports) != type([]):
+            self.sender.sendto(json_message.encode(), ('', self.ports))
+        else:
+            #if multiple ports exist send it there
+            for i in self.ports:
+                self.sender.sendto(json_message.encode(), ('', i))
+
 ```
-The environment above is defined to send randomly generated numbers. The main thread will grab two numbers and send them to the agent to create a line on a 2D plane. Obviously there is little purpose to what we are making. The code we are writing is going to demonstrate more the distributed aspects. Agents are usually written in a distributed environment. Due to not wanting to make the code unusable without two machines, it will be able to run locally or on multiple machines. There won't be any learning. As the job the agents are working to solve have only one rule and the environment won't change. Even a simple agent has a distributed design. An intense algorithm that is meant to adapt and learn is something that even setting up an environment is needlessly complicated and specific. Even if we worked through a complex example, there would be little to no carry over for the amount of work it'll take to complete a complex example. Understanding the distributed aspects will make it easier to build off of.  
+The environment above is defined to send randomly generated numbers. Obviously there is little purpose to what we are making. The code we are writing is going to demonstrate more the distributed aspects. Agents are usually written in a distributed environment. Due to not wanting to make the code unusable without two machines, it will be able to run locally or on multiple machines. There won't be any learning. As the job the agents are working to solve have only one rule and the environment won't change. Even a simple agent has a distributed design. An intense algorithm that is meant to adapt and learn is something that even setting up an environment is needlessly complicated and specific. Even if we worked through a complex example, there would be little to no carry over for the amount of work it'll take to complete a complex example. Understanding the distributed aspects will make it easier to build off of.  
