@@ -86,7 +86,7 @@ class agent:
         #this will tell the environment know we are ready for the next line to make
         self.sender.sendto("success".encode(), address)
 
-    #displays the grap
+    #displays the graph
     def show(self):
         self.plot.show()
 ```   
