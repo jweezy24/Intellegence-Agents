@@ -10,7 +10,7 @@ link-citations: yes
 
 # Environments for Agents:
 
-Agents are measured by their performance in the environment they were built for. Thus, there are a multitude of criteria a environment can be judged on. Agents are evaluated by how well they are able to manage the several pieces of their their environment. How the environment is described depends on how it fairs with five categories. We will first look at accessibility. All the categories below are defined firstly by Russel and Norvig[@HERE1].
+Agents are measured by their performance in the environment they were built for. Thus, there are a multitude of criteria a environment can be judged on. Agents are evaluated by how well they are able to manage the several pieces of their their environment. How the environment is described depends on how it fairs with five categories. We will first look at accessibility. All the categories below are defined firstly by Russel and Norvig [@HERE1].
 
 ### Accessibility
 How accessible a agent is depends on its sensory apparatus. So accessibility is graded on how well the agent's sensors evaluate the environment. An agent that is built for all aspects of it's environment means the environment is very accessible. You can look at accessibility as how well the agent interprets the environment. A human example of evaluating accessibility lies within Northwestern running-backs. Northwestern recruiters are known for picking a running-back that thinks before they run. Meaning, Northwestern running-backs are know for path finding. The way the runner evaluates their path is based on how well they deal with the data they are given. The recruiters look for how well the runner observes the field. Thus, a vital piece to a Northwestern running back is based on how well the runner deals with their sensory feedback. Thus, Northwestern recruiters look for a runner that is very accessible to the field. The best players that are accessible judge their environment quickly. Agents are judged on accessibility in the same sense. An agent's accessibility also depends on speed. The better the agent's sensors fair in a environment the more accessible the environment.
@@ -31,6 +31,7 @@ How discrete an environment is how many events are possible within the environme
 
 ## Simple Environments
 ![Figure 1](/images/basicDesign.png)
+[@z3]
 
 Environments can range from being as simple as reacting to a packet or can be as complex as reacting to the stock market. Agents are made to deal with specific environments. Most agents will be designed like the diagram above. The figure above is suited for a environment that is very discrete, static, deterministic, episodic, and accessible. You can see how linear the process is for a simple agent. In the most simple situation the system would only need a single agent waiting in a thread.
 
